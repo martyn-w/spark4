@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:api="http://www.symplectic.co.uk/publications/api">
+  <api:schema-version>5.5</api:schema-version>
+  <api:pagination results-count="3" items-per-page="2">
+    <api:page position="this" href="http://example.test/users?detail=full&amp;per-page=2"/>
+    <api:page position="next" href="http://example.test/users?detail=full&amp;per-page=2&amp;after-id=2"/>
+  </api:pagination>
+  <entry>
+    <api:object category="user" id="1" proprietary-id="user1" authenticating-authority="Internal" username="username1" last-affected-when="2018-10-12T11:39:52.743+01:00" last-modified-when="2018-10-12T11:39:52.743+01:00" href="http://example.test/users/1" created-when="2014-05-30T09:46:51.817+01:00" type-id="1" type="person">
+      <api:is-public>false</api:is-public>
+      <api:title>Associate Professor</api:title>
+      <api:initials>1</api:initials>
+      <api:last-name>One</api:last-name>
+      <api:first-name>User</api:first-name>
+      <api:email-address>user1@example.test</api:email-address>
+      <api:relationships href="http://example.test/users/1/relationships"/>
+    </api:object>
+  </entry>
+  <entry>
+    <api:object category="user" id="2" proprietary-id="user2" authenticating-authority="Internal" username="username2" last-affected-when="2018-10-12T11:39:54.973+01:00" last-modified-when="2018-10-12T11:39:54.973+01:00" href="http://example.test/users/2" created-when="2015-04-24T11:02:50.087+01:00" type-id="1" type="person">
+      <api:is-public>false</api:is-public>
+      <api:last-name>Two</api:last-name>
+      <api:email-address>user2@example.test</api:email-address>
+      <api:relationships href="http://example.test/users/2/relationships"/>
+    </api:object>
+  </entry>
+</feed>
