@@ -1,0 +1,1300 @@
+<?xml version="1.0"?>
+<data>
+  <api:relationship xmlns:api="http://www.symplectic.co.uk/publications/api" id="246137" type-id="8" type="publication-user-authorship" last-modified-when="2019-03-01T11:13:36.65+00:00" href="http://example.test/relationships/246137">
+      <api:is-visible>true</api:is-visible>
+      <api:is-favourite>false</api:is-favourite>
+      <api:related direction="from" category="publication" id="232304">
+        <api:object category="publication" id="232304" last-affected-when="2020-06-17T15:04:51.287+01:00" last-modified-when="2020-06-17T15:04:51.287+01:00" href="http://example.test/publications/232304" created-when="2014-06-10T09:04:13.697+01:00" type-id="5" type="journal-article">
+          <!--Publication type 5 is "journal article"-->
+          <api:ever-approved>true</api:ever-approved>
+          <api:is-public>true</api:is-public>
+          <api:records>
+            <api:record format="native" id="591463" source-id="5" source-name="arxiv" source-display-name="arXiv" id-at-source="1101.0056">
+              <api:native>
+                <api:field name="abstract" type="text" display-name="Abstract">
+                  <api:text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quam est, rhoncus vel commodo et, condimentum eu eros. Curabitur ultricies nibh non est tempor, ut finibus arcu tempor. Vivamus tincidunt magna leo, non interdum enim suscipit id. Donec laoreet bibendum lectus, ut ultrices risus consequat vel. Aliquam pharetra mauris et ipsum mollis cursus at in tellus. Aliquam mollis purus quis dui eleifend, a suscipit nisi rhoncus. Nulla ut erat sit amet ex mollis iaculis vitae a sem. Praesent at lectus consectetur, aliquet tortor vel, tincidunt mauris. Duis molestie tristique dui, ultricies molestie sapien. Vivamus eu egestas erat, sit amet ornare ex. Praesent suscipit magna ex, nec cursus nisl posuere at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin vulputate hendrerit euismod. Cras sollicitudin erat felis, et semper dolor fermentum aliquet. Curabitur velit eros, placerat a ex ac, laoreet commodo ligula. Aliquam vehicula maximus ante, sed sodales nunc consequat eu.</api:text>
+                </api:field>
+                <api:field name="authors" type="person-list" display-name="Authors">
+                  <api:people>
+                    <api:person>
+                      <api:links>
+                        <api:link type="elements/user" id="1" href="http://example.test/users/1"/>
+                      </api:links>
+                      <api:last-name>Author1</api:last-name>
+                      <api:initials>J</api:initials>
+                      <api:first-names>Author1</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author1</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                  </api:people>
+                </api:field>
+                <api:field name="author-url" type="text" display-name="Author URL">
+                  <api:text>http://arxiv.org/abs/1101.0056v1</api:text>
+                </api:field>
+                <api:field name="keywords" type="keyword-list" display-name="Keywords">
+                  <api:keywords>
+                    <api:keyword>cs.DS</api:keyword>
+                    <api:keyword>cs.DS</api:keyword>
+                  </api:keywords>
+                </api:field>
+                <api:field name="notes" type="text" display-name="Notes">
+                  <api:text>(Nine)Pages, (Two)figure</api:text>
+                </api:field>
+                <api:field name="record-created-at-source-date" type="date" display-name="Record created at source">
+                  <api:date>
+                    <api:day>30</api:day>
+                    <api:month>12</api:month>
+                    <api:year>2010</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="record-made-public-at-source-date" type="date" display-name="Record made publicly available">
+                  <api:date>
+                    <api:day>30</api:day>
+                    <api:month>12</api:month>
+                    <api:year>2010</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="title" type="text" display-name="Title">
+                  <api:text>An Algorithm to Reduce the Time Complexity of Earliest Deadline First
+                    Scheduling Algorithm in Real-Time System</api:text>
+                </api:field>
+                <api:files>
+                  <api:file proprietary-id="http://arxiv.org/pdf/1101.0056v1">
+                    <api:filename>1101.0056v1.pdf</api:filename>
+                    <api:file-url>http://arxiv.org/pdf/1101.0056v1</api:file-url>
+                    <api:extension>pdf</api:extension>
+                  </api:file>
+                </api:files>
+              </api:native>
+            </api:record>
+          </api:records>
+          <api:fields/>
+          <api:all-labels type="keyword-list">
+            <api:keywords>
+              <api:keyword origin="record-data" source="arxiv">cs.DS</api:keyword>
+              <api:keyword origin="record-data" source="arxiv">cs.DS</api:keyword>
+            </api:keywords>
+          </api:all-labels>
+          <api:relationships href="http://example.test/publications/232304/relationships"/>
+        </api:object>
+      </api:related>
+    </api:relationship>
+  <api:relationship xmlns:api="http://www.symplectic.co.uk/publications/api" id="246138" type-id="8" type="publication-user-authorship" last-modified-when="2019-03-01T11:13:36.65+00:00" href="http://example.test/relationships/246138">
+      <api:is-visible>true</api:is-visible>
+      <api:is-favourite>false</api:is-favourite>
+      <api:related direction="from" category="publication" id="232305">
+        <api:object category="publication" id="232305" last-affected-when="2020-06-17T15:04:51.287+01:00" last-modified-when="2020-06-17T15:04:51.287+01:00" href="http://example.test/publications/232305" created-when="2014-06-10T09:04:13.81+01:00" type-id="5" type="journal-article">
+          <!--Publication type 5 is "journal article"-->
+          <api:ever-approved>true</api:ever-approved>
+          <api:is-public>true</api:is-public>
+          <api:records>
+            <api:record format="native" id="591464" source-id="5" source-name="arxiv" source-display-name="arXiv" id-at-source="1101.1718">
+              <api:native>
+                <api:field name="abstract" type="text" display-name="Abstract">
+                  <api:text>Vestibulum ullamcorper rutrum quam, ac bibendum sapien. Suspendisse lacus ante, viverra aliquet lacinia sed, pretium sit amet quam. Morbi sit amet tincidunt neque. Fusce eu felis nec turpis tincidunt rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent at nisi ultricies, volutpat augue nec, vulputate ligula. Nunc vel justo vel nisl interdum pellentesque a ac tortor. Maecenas sit amet vestibulum turpis. Integer ac quam viverra nisl varius pulvinar. Sed tincidunt dignissim vestibulum.</api:text>
+                </api:field>
+                <api:field name="authors" type="person-list" display-name="Authors">
+                  <api:people>
+                    <api:person>
+                      <api:links>
+                        <api:link type="elements/user" id="1" href="http://example.test/users/1"/>
+                      </api:links>
+                      <api:last-name>Author1</api:last-name>
+                      <api:initials>J</api:initials>
+                      <api:first-names>Author1</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author1</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                  </api:people>
+                </api:field>
+                <api:field name="author-url" type="text" display-name="Author URL">
+                  <api:text>http://arxiv.org/abs/1101.1718v1</api:text>
+                </api:field>
+                <api:field name="keywords" type="keyword-list" display-name="Keywords">
+                  <api:keywords>
+                    <api:keyword>cs.SE</api:keyword>
+                    <api:keyword>cs.SE</api:keyword>
+                    <api:keyword>Earliest-deadline first, feasibility analysis, fixed-task-priority,
+                      fixed-job-priority, worst case execution</api:keyword>
+                    <api:keyword>F.2.2; I.2.7</api:keyword>
+                  </api:keywords>
+                </api:field>
+                <api:field name="notes" type="text" display-name="Notes">
+                  <api:text>9 pages,1 figure</api:text>
+                </api:field>
+                <api:field name="record-created-at-source-date" type="date" display-name="Record created at source">
+                  <api:date>
+                    <api:day>10</api:day>
+                    <api:month>1</api:month>
+                    <api:year>2011</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="record-made-public-at-source-date" type="date" display-name="Record made publicly available">
+                  <api:date>
+                    <api:day>10</api:day>
+                    <api:month>1</api:month>
+                    <api:year>2011</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="title" type="text" display-name="Title">
+                  <api:text>Precise Schedulability Analysis for unfeasible to notify separately for
+                    comprehensive - EDF Scheduling of interrupted Hard Real-Time Tasks on the
+                    similar Multiprocessors</api:text>
+                </api:field>
+                <api:files>
+                  <api:file proprietary-id="http://arxiv.org/pdf/1101.1718v1">
+                    <api:filename>1101.1718v1.pdf</api:filename>
+                    <api:file-url>http://arxiv.org/pdf/1101.1718v1</api:file-url>
+                    <api:extension>pdf</api:extension>
+                  </api:file>
+                </api:files>
+              </api:native>
+            </api:record>
+          </api:records>
+          <api:fields/>
+          <api:all-labels type="keyword-list">
+            <api:keywords>
+              <api:keyword origin="record-data" source="arxiv">cs.SE</api:keyword>
+              <api:keyword origin="record-data" source="arxiv">cs.SE</api:keyword>
+              <api:keyword origin="record-data" source="arxiv">Earliest-deadline first, feasibility analysis, fixed-task-priority,
+                fixed-job-priority, worst case execution</api:keyword>
+              <api:keyword origin="record-data" source="arxiv">F.2.2; I.2.7</api:keyword>
+            </api:keywords>
+          </api:all-labels>
+          <api:relationships href="http://example.test/publications/232305/relationships"/>
+        </api:object>
+      </api:related>
+    </api:relationship>
+  <api:relationship xmlns:api="http://www.symplectic.co.uk/publications/api" id="250641" type-id="8" type="publication-user-authorship" last-modified-when="2019-03-01T11:13:36.65+00:00" href="http://example.test/relationships/250641">
+      <api:is-visible>true</api:is-visible>
+      <api:is-favourite>false</api:is-favourite>
+      <api:related direction="from" category="publication" id="236775">
+        <api:object category="publication" id="236775" last-affected-when="2020-07-23T18:11:54.703+01:00" last-modified-when="2020-07-23T18:11:54.703+01:00" href="http://example.test/publications/236775" created-when="2014-06-10T10:35:41.383+01:00" type-id="5" type="journal-article">
+          <!--Publication type 5 is "journal article"-->
+          <api:ever-approved>true</api:ever-approved>
+          <api:reporting-date-1>2007-09-11</api:reporting-date-1>
+          <api:is-public>true</api:is-public>
+          <api:records>
+            <api:record format="native" id="599818" source-id="3" source-name="wos" source-display-name="Web of Science" id-at-source="WOS:123456">
+              <api:citation-count>32</api:citation-count>
+              <api:native>
+                <api:field name="addresses" type="address-list" display-name="Addresses">
+                  <api:addresses>
+                    <api:address iso-country-code="IN">
+                      <api:line type="organisation">Guru Nanak Dev University</api:line>
+                      <api:line type="suborganisation">Ctr Genet Disorders</api:line>
+                      <api:line type="city">Amritsar</api:line>
+                      <api:line type="state">Punjab</api:line>
+                      <api:line type="country">India</api:line>
+                      <api:grid id="grid.411894.1" href="https://grid.ac/institutes/grid.411894.1" latitude="31.63788" longitude="74.82439"/>
+                    </api:address>
+                    <api:address iso-country-code="DE">
+                      <api:line type="organisation">Humboldt Univ</api:line>
+                      <api:line type="suborganisation">Charite</api:line>
+                      <api:line type="suborganisation">Inst Human Genet</api:line>
+                      <api:line type="city">Berlin</api:line>
+                      <api:line type="country">Germany</api:line>
+                      <api:grid id="grid.6363.0" href="https://grid.ac/institutes/grid.6363.0" latitude="52.52667" longitude="13.37972"/>
+                    </api:address>
+                    <api:address iso-country-code="IN">
+                      <api:line type="organisation">Eye Hosp</api:line>
+                      <api:line type="city">Amritsar</api:line>
+                      <api:line type="state">Punjab</api:line>
+                      <api:line type="country">India</api:line>
+                    </api:address>
+                  </api:addresses>
+                </api:field>
+                <api:field name="authors" type="person-list" display-name="Authors">
+                  <api:people>
+                    <api:person>
+                      <api:last-name>Author2</api:last-name>
+                      <api:initials>K</api:initials>
+                      <api:first-names>Author2</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author2</api:first-name>
+                      </api:separate-first-names>
+                      <api:identifiers>
+                        <api:identifier scheme="orcid">0000-0002-1626-601X</api:identifier>
+                      </api:identifiers>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author3</api:last-name>
+                      <api:initials>K</api:initials>
+                      <api:first-names>Author3</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author3</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author4</api:last-name>
+                      <api:initials>D</api:initials>
+                      <api:first-names>Author4</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author4</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author5</api:last-name>
+                      <api:initials>R</api:initials>
+                      <api:first-names>Author5</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author5</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:links>
+                        <api:link type="elements/user" id="1" href="http://example.test/users/1"/>
+                      </api:links>
+                      <api:last-name>Author6</api:last-name>
+                      <api:initials>JR</api:initials>
+                      <api:first-names>Author6</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author6</api:first-name>
+                        <api:first-name>Author6</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author7</api:last-name>
+                      <api:initials>V</api:initials>
+                      <api:first-names>Author7</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author7</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                  </api:people>
+                </api:field>
+                <api:field name="author-url" type="text" display-name="Author URL">
+                  <api:text>http://gateway.webofknowledge.com/gateway/Gateway.cgi?foo</api:text>
+                </api:field>
+                <api:field name="external-identifiers" type="identifier-list" display-name="External identifiers">
+                  <api:identifiers>
+                    <api:identifier scheme="pubmed">12345</api:identifier>
+                  </api:identifiers>
+                </api:field>
+                <api:field name="issn" type="text" display-name="ISSN">
+                  <api:text>1090-0535</api:text>
+                  <api:links>
+                    <api:link type="elements/journal" href="http://example.test/journals/343005"/>
+                  </api:links>
+                </api:field>
+                <api:field name="issue" type="text" display-name="Issue">
+                  <api:text>183-85</api:text>
+                </api:field>
+                <api:field name="journal" type="text" display-name="Journal">
+                  <api:text>MOLECULAR VISION</api:text>
+                </api:field>
+                <api:field name="keywords" type="keyword-list" display-name="Keywords">
+                  <api:keywords>
+                    <api:keyword>Science &amp; Technology</api:keyword>
+                    <api:keyword>Life Sciences &amp; Biomedicine</api:keyword>
+                    <api:keyword>Biochemistry &amp; Molecular Biology</api:keyword>
+                    <api:keyword>Ophthalmology</api:keyword>
+                    <api:keyword>ZONULAR PULVERULENT CATARACTS</api:keyword>
+                    <api:keyword>MISSENSE MUTATION</api:keyword>
+                    <api:keyword>SUTURAL CATARACT</api:keyword>
+                    <api:keyword>MICE</api:keyword>
+                    <api:keyword>LENS</api:keyword>
+                    <api:keyword>LINKAGE</api:keyword>
+                    <api:keyword>MICROPHTHALMIA</api:keyword>
+                    <api:keyword>POPULATION</api:keyword>
+                    <api:keyword>DISRUPTION</api:keyword>
+                    <api:keyword>DOMAINS</api:keyword>
+                  </api:keywords>
+                </api:field>
+                <api:field name="language" type="text" display-name="Language">
+                  <api:text>English</api:text>
+                </api:field>
+                <api:field name="pagination" type="pagination" display-name="Pagination">
+                  <api:pagination>
+                    <api:begin-page>1657</api:begin-page>
+                    <api:end-page>1665</api:end-page>
+                    <api:page-count>9</api:page-count>
+                  </api:pagination>
+                </api:field>
+                <api:field name="publication-date" type="date" display-name="Publication date">
+                  <api:date>
+                    <api:day>11</api:day>
+                    <api:month>9</api:month>
+                    <api:year>2007</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="publication-status" type="text" display-name="Status">
+                  <api:text>Published</api:text>
+                </api:field>
+                <api:field name="publisher" type="text" display-name="Publisher">
+                  <api:text>MOLECULAR VISION</api:text>
+                </api:field>
+                <api:field name="title" type="text" display-name="Title">
+                  <api:text>A novel mutation in the connexin 46 (GJA3) gene associated with autosomal dominant congenital cataract in an Indian family</api:text>
+                </api:field>
+                <api:field name="types" type="list" display-name="Sub types">
+                  <api:items>
+                    <api:item>Article</api:item>
+                    <api:item>Journal</api:item>
+                  </api:items>
+                </api:field>
+                <api:field name="volume" type="text" display-name="Volume">
+                  <api:text>13</api:text>
+                </api:field>
+              </api:native>
+            </api:record>
+            <api:record format="native" id="602769" source-id="2" source-name="pubmed" source-display-name="PubMed" id-at-source="17893674">
+              <api:native>
+                <api:field name="abstract" type="text" display-name="Abstract">
+                  <api:text>In lectus neque, hendrerit ut lectus nec, commodo porta tellus. Pellentesque pellentesque placerat tellus sed facilisis. Cras a tincidunt massa, eu facilisis diam. Sed sed ex justo. Nunc condimentum magna non est luctus, sed blandit felis auctor. Donec pretium, tellus sit amet maximus tincidunt, augue mi faucibus justo, ac euismod leo ante eleifend mauris. Sed condimentum leo quis erat gravida, sit amet elementum turpis faucibus. Fusce vitae dui a elit fermentum aliquet quis a sapien. Etiam suscipit tempor ornare. Suspendisse lacinia, leo mollis luctus vulputate, felis nulla luctus augue, in aliquet justo neque vestibulum tellus.</api:text>
+                </api:field>
+                <api:field name="authors" type="person-list" display-name="Authors">
+                  <api:people>
+                    <api:person>
+                      <api:last-name>Author10</api:last-name>
+                      <api:initials>K</api:initials>
+                      <api:first-names>Author10</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author10</api:first-name>
+                      </api:separate-first-names>
+                      <api:addresses>
+                        <api:address iso-country-code="IN">
+                          <api:line type="full">Centre for Genetic Disorders, Guru Nanak Dev University, Amritsar, India.</api:line>
+                          <api:grid id="grid.411894.1" href="https://grid.ac/institutes/grid.411894.1" latitude="31.63788" longitude="74.82439"/>
+                        </api:address>
+                      </api:addresses>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author11</api:last-name>
+                      <api:initials>K</api:initials>
+                      <api:first-names>Author11</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author11</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author12</api:last-name>
+                      <api:initials>D</api:initials>
+                      <api:first-names>Author12</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author12</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author13</api:last-name>
+                      <api:initials>R</api:initials>
+                      <api:first-names>Author13</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author13</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:links>
+                        <api:link type="elements/user" id="1" href="http://example.test/users/1"/>
+                      </api:links>
+                      <api:last-name>Author14</api:last-name>
+                      <api:initials>JR</api:initials>
+                      <api:first-names>Author14</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author14</api:first-name>
+                        <api:first-name>Author14</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author15</api:last-name>
+                      <api:initials>V</api:initials>
+                      <api:first-names>Author15</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author15</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                  </api:people>
+                </api:field>
+                <api:field name="author-url" type="text" display-name="Author URL">
+                  <api:text>https://www.ncbi.nlm.nih.gov/pubmed/17893674</api:text>
+                </api:field>
+                <api:field name="eissn" type="text" display-name="eISSN">
+                  <api:text>1090-0535</api:text>
+                  <api:links>
+                    <api:link type="elements/journal" href="http://example.test/journals/343005"/>
+                  </api:links>
+                </api:field>
+                <api:field name="journal" type="text" display-name="Journal">
+                  <api:text>Mol Vis</api:text>
+                </api:field>
+                <api:field name="keywords" type="keyword-list" display-name="Keywords">
+                  <api:keywords>
+                    <api:keyword scheme="mesh">Amino Acid Substitution</api:keyword>
+                    <api:keyword scheme="mesh">Arginine</api:keyword>
+                    <api:keyword scheme="mesh">Asian Continental Ancestry Group</api:keyword>
+                    <api:keyword scheme="mesh">Cataract</api:keyword>
+                    <api:keyword scheme="mesh">Chromosome Mapping</api:keyword>
+                    <api:keyword scheme="mesh">Chromosomes, Human, Pair 13</api:keyword>
+                    <api:keyword scheme="mesh">Connexins</api:keyword>
+                    <api:keyword scheme="mesh">DNA Mutational Analysis</api:keyword>
+                    <api:keyword scheme="mesh">Female</api:keyword>
+                    <api:keyword scheme="mesh">Genes, Dominant</api:keyword>
+                    <api:keyword scheme="mesh">Genetic Linkage</api:keyword>
+                    <api:keyword scheme="mesh">Guanine</api:keyword>
+                    <api:keyword scheme="mesh">Haplotypes</api:keyword>
+                    <api:keyword scheme="mesh">Heterozygote</api:keyword>
+                    <api:keyword scheme="mesh">Humans</api:keyword>
+                    <api:keyword scheme="mesh">India</api:keyword>
+                    <api:keyword scheme="mesh">Leucine</api:keyword>
+                    <api:keyword scheme="mesh">Lod Score</api:keyword>
+                    <api:keyword scheme="mesh">Male</api:keyword>
+                    <api:keyword scheme="mesh">Mutation</api:keyword>
+                    <api:keyword scheme="mesh">Oligonucleotide Array Sequence Analysis</api:keyword>
+                    <api:keyword scheme="mesh">Pedigree</api:keyword>
+                    <api:keyword scheme="mesh">Polymorphism, Single Nucleotide</api:keyword>
+                    <api:keyword scheme="mesh">Thymine</api:keyword>
+                  </api:keywords>
+                </api:field>
+                <api:field name="language" type="text" display-name="Language">
+                  <api:text>eng</api:text>
+                </api:field>
+                <api:field name="location" type="text" display-name="Country">
+                  <api:text>United States</api:text>
+                </api:field>
+                <api:field name="pagination" type="pagination" display-name="Pagination">
+                  <api:pagination>
+                    <api:begin-page>1657</api:begin-page>
+                    <api:end-page>1665</api:end-page>
+                  </api:pagination>
+                </api:field>
+                <api:field name="pii" type="text" display-name="PII">
+                  <api:text>v13/a185</api:text>
+                </api:field>
+                <api:field name="publication-date" type="date" display-name="Publication date">
+                  <api:date>
+                    <api:day>11</api:day>
+                    <api:month>9</api:month>
+                    <api:year>2007</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="publication-status" type="text" display-name="Status">
+                  <api:text>Published online</api:text>
+                </api:field>
+                <api:field name="record-made-public-at-source-date" type="date" display-name="Record made publicly available">
+                  <api:date>
+                    <api:day>23</api:day>
+                    <api:month>10</api:month>
+                    <api:year>2007</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="title" type="text" display-name="Title">
+                  <api:text>A novel mutation in the connexin 46 (GJA3) gene associated with autosomal dominant congenital cataract in an Indian family.</api:text>
+                </api:field>
+                <api:field name="types" type="list" display-name="Sub types">
+                  <api:items>
+                    <api:item>Journal Article</api:item>
+                    <api:item>Research Support, Non-U.S. Gov't</api:item>
+                  </api:items>
+                </api:field>
+                <api:field name="volume" type="text" display-name="Volume">
+                  <api:text>13</api:text>
+                </api:field>
+              </api:native>
+            </api:record>
+            <api:record format="native" id="1118076" source-id="26" source-name="dimensions-for-universities" source-display-name="Dimensions for Universities" id-at-source="17893674">
+              <api:citation-count>28</api:citation-count>
+              <api:native>
+                <api:field name="abstract" type="text" display-name="Abstract">
+                  <api:text>Sed in turpis eget felis aliquet sollicitudin vel ac dolor. Duis ultricies, erat ac venenatis tempus, sem nunc suscipit ex, sollicitudin gravida est nunc in velit. Vestibulum non eros varius elit consectetur congue. Morbi nulla massa, scelerisque sed mauris quis, mollis viverra nisl. Cras lacinia sem eu tincidunt tincidunt. Curabitur vitae rhoncus nisl. Nullam ante mauris, scelerisque at ante et, faucibus congue magna.</api:text>
+                </api:field>
+                <api:field name="authors" type="person-list" display-name="Authors">
+                  <api:people>
+                    <api:person>
+                      <api:last-name>Author</api:last-name>
+                      <api:initials>K</api:initials>
+                      <api:first-names>Author</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author</api:last-name>
+                      <api:initials>K</api:initials>
+                      <api:first-names>Author</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author</api:last-name>
+                      <api:initials>D</api:initials>
+                      <api:first-names>Author</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author</api:last-name>
+                      <api:initials>R</api:initials>
+                      <api:first-names>Author</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:links>
+                        <api:link type="elements/user" id="1" href="http://example.test/users/1"/>
+                      </api:links>
+                      <api:last-name>Author</api:last-name>
+                      <api:initials>JR</api:initials>
+                      <api:first-names>Author</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author</api:first-name>
+                        <api:first-name>Author</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author</api:last-name>
+                      <api:initials>V</api:initials>
+                      <api:first-names>Author</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                  </api:people>
+                </api:field>
+                <api:field name="external-identifiers" type="identifier-list" display-name="External identifiers">
+                  <api:identifiers>
+                    <api:identifier scheme="pubmed">17893674</api:identifier>
+                  </api:identifiers>
+                </api:field>
+                <api:field name="journal" type="text" display-name="Journal">
+                  <api:text>Molecular vision</api:text>
+                </api:field>
+                <api:field name="keywords" type="keyword-list" display-name="Keywords">
+                  <api:keywords>
+                    <api:keyword scheme="for">0604 Genetics</api:keyword>
+                    <api:keyword>Biomedical</api:keyword>
+                    <api:keyword>Clinical Medicine and Science</api:keyword>
+                    <api:keyword>Prevention</api:keyword>
+                    <api:keyword>Human Genome</api:keyword>
+                    <api:keyword>Biotechnology</api:keyword>
+                    <api:keyword>Pediatric</api:keyword>
+                    <api:keyword>Clinical Research</api:keyword>
+                    <api:keyword>Genetics</api:keyword>
+                  </api:keywords>
+                </api:field>
+                <api:field name="pagination" type="pagination" display-name="Pagination">
+                  <api:pagination>
+                    <api:begin-page>1657</api:begin-page>
+                    <api:end-page>1665</api:end-page>
+                  </api:pagination>
+                </api:field>
+                <api:field name="publication-date" type="date" display-name="Publication date">
+                  <api:date>
+                    <api:day>11</api:day>
+                    <api:month>9</api:month>
+                    <api:year>2007</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="publication-status" type="text" display-name="Status">
+                  <api:text>Published</api:text>
+                </api:field>
+                <api:field name="relative-citation-ratio" type="decimal" display-name="Relative citation ratio">
+                  <api:decimal>1.04</api:decimal>
+                </api:field>
+                <api:field name="title" type="text" display-name="Title">
+                  <api:text>A novel mutation in the connexin 46 (GJA3) gene associated with autosomal dominant congenital cataract in an Indian family.</api:text>
+                </api:field>
+                <api:field name="types" type="list" display-name="Sub types">
+                  <api:items>
+                    <api:item>Journal Article</api:item>
+                  </api:items>
+                </api:field>
+                <api:field name="volume" type="text" display-name="Volume">
+                  <api:text>13</api:text>
+                </api:field>
+              </api:native>
+            </api:record>
+            <api:record format="native" id="602768" source-id="18" source-name="epmc" source-display-name="Europe PubMed Central" id-at-source="MED:17893674">
+              <api:citation-count>25</api:citation-count>
+              <api:native>
+                <api:field name="abstract" type="text" display-name="Abstract">
+                  <api:text>Cras varius orci eros, at mattis urna hendrerit non. Aenean quis magna at ipsum eleifend sagittis ultrices eget nibh. Nulla facilisi. Nulla porta tincidunt sollicitudin. Donec finibus mollis bibendum. Nullam et eleifend velit, quis fringilla mi. Aliquam erat volutpat. Curabitur mollis diam in odio vulputate, porttitor gravida orci faucibus. Vestibulum venenatis at nisi eu ultricies. Integer condimentum sed metus id facilisis. Mauris maximus libero ut orci fringilla, id posuere lacus sagittis.</api:text>
+                </api:field>
+                <api:field name="addresses" type="address-list" display-name="Addresses">
+                  <api:addresses>
+                    <api:address iso-country-code="IN">
+                      <api:line type="full">Centre for Genetic Disorders, Guru Nanak Dev University, Amritsar, India.</api:line>
+                      <api:grid id="grid.411894.1" href="https://grid.ac/institutes/grid.411894.1" latitude="31.63788" longitude="74.82439"/>
+                    </api:address>
+                  </api:addresses>
+                </api:field>
+                <api:field name="authors" type="person-list" display-name="Authors">
+                  <api:people>
+                    <api:person>
+                      <api:last-name>Author</api:last-name>
+                      <api:initials>K</api:initials>
+                      <api:first-names>Author</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author</api:last-name>
+                      <api:initials>K</api:initials>
+                      <api:first-names>Author</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author</api:last-name>
+                      <api:initials>D</api:initials>
+                      <api:first-names>Author</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author</api:last-name>
+                      <api:initials>R</api:initials>
+                      <api:first-names>Author</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:links>
+                        <api:link type="elements/user" id="1" href="http://example.test/users/1"/>
+                      </api:links>
+                      <api:last-name>Author</api:last-name>
+                      <api:initials>JR</api:initials>
+                      <api:first-names>Author Author</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author</api:first-name>
+                        <api:first-name>Author</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author</api:last-name>
+                      <api:initials>V</api:initials>
+                      <api:first-names>Author</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                  </api:people>
+                </api:field>
+                <api:field name="eissn" type="text" display-name="eISSN">
+                  <api:text>1090-0535</api:text>
+                  <api:links>
+                    <api:link type="elements/journal" href="http://example.test/journals/343005"/>
+                  </api:links>
+                </api:field>
+                <api:field name="external-identifiers" type="identifier-list" display-name="External identifiers">
+                  <api:identifiers>
+                    <api:identifier scheme="pubmed">17893674</api:identifier>
+                  </api:identifiers>
+                </api:field>
+                <api:field name="is-open-access" type="boolean" display-name="Open access">
+                  <api:boolean>false</api:boolean>
+                </api:field>
+                <api:field name="issn" type="text" display-name="ISSN">
+                  <api:text>1090-0535</api:text>
+                  <api:links>
+                    <api:link type="elements/journal" href="http://example.test/journals/343005"/>
+                  </api:links>
+                </api:field>
+                <api:field name="journal" type="text" display-name="Journal">
+                  <api:text>Molecular Vision</api:text>
+                </api:field>
+                <api:field name="keywords" type="keyword-list" display-name="Keywords">
+                  <api:keywords>
+                    <api:keyword scheme="mesh">Chromosomes, Human, Pair 13</api:keyword>
+                    <api:keyword scheme="mesh">Humans</api:keyword>
+                    <api:keyword scheme="mesh">Cataract</api:keyword>
+                    <api:keyword scheme="mesh">Thymine</api:keyword>
+                    <api:keyword scheme="mesh">Guanine</api:keyword>
+                    <api:keyword scheme="mesh">Arginine</api:keyword>
+                    <api:keyword scheme="mesh">Leucine</api:keyword>
+                    <api:keyword scheme="mesh">Connexins</api:keyword>
+                    <api:keyword scheme="mesh">Oligonucleotide Array Sequence Analysis</api:keyword>
+                    <api:keyword scheme="mesh">Chromosome Mapping</api:keyword>
+                    <api:keyword scheme="mesh">Amino Acid Substitution</api:keyword>
+                    <api:keyword scheme="mesh">Pedigree</api:keyword>
+                    <api:keyword scheme="mesh">DNA Mutational Analysis</api:keyword>
+                    <api:keyword scheme="mesh">Haplotypes</api:keyword>
+                    <api:keyword scheme="mesh">Heterozygote</api:keyword>
+                    <api:keyword scheme="mesh">Genes, Dominant</api:keyword>
+                    <api:keyword scheme="mesh">Lod Score</api:keyword>
+                    <api:keyword scheme="mesh">Mutation</api:keyword>
+                    <api:keyword scheme="mesh">Polymorphism, Single Nucleotide</api:keyword>
+                    <api:keyword scheme="mesh">Asian Continental Ancestry Group</api:keyword>
+                    <api:keyword scheme="mesh">India</api:keyword>
+                    <api:keyword scheme="mesh">Female</api:keyword>
+                    <api:keyword scheme="mesh">Male</api:keyword>
+                    <api:keyword scheme="mesh">Genetic Linkage</api:keyword>
+                  </api:keywords>
+                </api:field>
+                <api:field name="language" type="text" display-name="Language">
+                  <api:text>eng</api:text>
+                </api:field>
+                <api:field name="medium" type="text" display-name="Medium">
+                  <api:text>Electronic</api:text>
+                </api:field>
+                <api:field name="pagination" type="pagination" display-name="Pagination">
+                  <api:pagination>
+                    <api:begin-page>1657</api:begin-page>
+                    <api:end-page>1665</api:end-page>
+                  </api:pagination>
+                </api:field>
+                <api:field name="publication-date" type="date" display-name="Publication date">
+                  <api:date>
+                    <api:month>1</api:month>
+                    <api:year>2007</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="publication-status" type="text" display-name="Status">
+                  <api:text>Published</api:text>
+                </api:field>
+                <api:field name="record-created-at-source-date" type="date" display-name="Record created at source">
+                  <api:date>
+                    <api:day>25</api:day>
+                    <api:month>9</api:month>
+                    <api:year>2007</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="title" type="text" display-name="Title">
+                  <api:text>A novel mutation in the connexin 46 (GJA3) gene associated with autosomal dominant congenital cataract in an Indian family.</api:text>
+                </api:field>
+                <api:field name="types" type="list" display-name="Sub types">
+                  <api:items>
+                    <api:item>Research Support, Non-U.S. Gov't</api:item>
+                    <api:item>Journal Article</api:item>
+                  </api:items>
+                </api:field>
+                <api:field name="volume" type="text" display-name="Volume">
+                  <api:text>13</api:text>
+                </api:field>
+              </api:native>
+            </api:record>
+          </api:records>
+          <api:fields/>
+          <api:all-labels type="keyword-list">
+            <api:keywords>
+              <api:keyword origin="record-data" source="wos">Science &amp; Technology</api:keyword>
+              <api:keyword origin="record-data" source="wos">Life Sciences &amp; Biomedicine</api:keyword>
+              <api:keyword origin="record-data" source="wos">Biochemistry &amp; Molecular Biology</api:keyword>
+              <api:keyword origin="record-data" source="wos">Ophthalmology</api:keyword>
+              <api:keyword origin="record-data" source="wos">ZONULAR PULVERULENT CATARACTS</api:keyword>
+              <api:keyword origin="record-data" source="wos">MISSENSE MUTATION</api:keyword>
+              <api:keyword origin="record-data" source="wos">SUTURAL CATARACT</api:keyword>
+              <api:keyword origin="record-data" source="wos">MICE</api:keyword>
+              <api:keyword origin="record-data" source="wos">LENS</api:keyword>
+              <api:keyword origin="record-data" source="wos">LINKAGE</api:keyword>
+              <api:keyword origin="record-data" source="wos">MICROPHTHALMIA</api:keyword>
+              <api:keyword origin="record-data" source="wos">POPULATION</api:keyword>
+              <api:keyword origin="record-data" source="wos">DISRUPTION</api:keyword>
+              <api:keyword origin="record-data" source="wos">DOMAINS</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Amino Acid Substitution</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Arginine</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Asian Continental Ancestry Group</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Cataract</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Chromosome Mapping</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Chromosomes, Human, Pair 13</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Connexins</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">DNA Mutational Analysis</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Female</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Genes, Dominant</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Genetic Linkage</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Guanine</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Haplotypes</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Heterozygote</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Humans</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">India</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Leucine</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Lod Score</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Male</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Mutation</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Oligonucleotide Array Sequence Analysis</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Pedigree</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Polymorphism, Single Nucleotide</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="pubmed">Thymine</api:keyword>
+              <api:keyword scheme="for" origin="record-data" source="dimensions-for-universities">0604 Genetics</api:keyword>
+              <api:keyword origin="record-data" source="dimensions-for-universities">Biomedical</api:keyword>
+              <api:keyword origin="record-data" source="dimensions-for-universities">Clinical Medicine and Science</api:keyword>
+              <api:keyword origin="record-data" source="dimensions-for-universities">Prevention</api:keyword>
+              <api:keyword origin="record-data" source="dimensions-for-universities">Human Genome</api:keyword>
+              <api:keyword origin="record-data" source="dimensions-for-universities">Biotechnology</api:keyword>
+              <api:keyword origin="record-data" source="dimensions-for-universities">Pediatric</api:keyword>
+              <api:keyword origin="record-data" source="dimensions-for-universities">Clinical Research</api:keyword>
+              <api:keyword origin="record-data" source="dimensions-for-universities">Genetics</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Chromosomes, Human, Pair 13</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Humans</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Cataract</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Thymine</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Guanine</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Arginine</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Leucine</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Connexins</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Oligonucleotide Array Sequence Analysis</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Chromosome Mapping</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Amino Acid Substitution</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Pedigree</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">DNA Mutational Analysis</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Haplotypes</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Heterozygote</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Genes, Dominant</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Lod Score</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Mutation</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Polymorphism, Single Nucleotide</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Asian Continental Ancestry Group</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">India</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Female</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Male</api:keyword>
+              <api:keyword scheme="mesh" origin="record-data" source="epmc">Genetic Linkage</api:keyword>
+              <api:keyword scheme="science-metrix" origin="issn-inferred">Ophthalmology &amp; Optometry</api:keyword>
+              <api:keyword scheme="for" origin="issn-inferred">1113 Opthalmology and Optometry</api:keyword>
+            </api:keywords>
+          </api:all-labels>
+          <api:journal issn="1090-0535" href="http://example.test/journals/343005">
+            <api:records>
+              <api:record source-name="era-2015">
+                <api:title>Molecular Vision</api:title>
+              </api:record>
+              <api:record source-name="snip">
+                <api:title>Molecular Vision</api:title>
+              </api:record>
+              <api:record source-name="sherpa-romeo">
+                <api:title>Molecular Vision</api:title>
+              </api:record>
+              <api:record source-name="sjr">
+                <api:title>Molecular Vision</api:title>
+              </api:record>
+              <api:record source-name="era-2012">
+                <api:title>Molecular Vision</api:title>
+              </api:record>
+              <api:record source-name="science-metrix">
+                <api:title>Molecular vision</api:title>
+              </api:record>
+              <api:record source-name="jcr">
+                <api:title>MOLECULAR VISION</api:title>
+              </api:record>
+              <api:record source-name="doaj">
+                <api:title>Molecular Vision</api:title>
+              </api:record>
+              <api:record source-name="era-2010">
+                <api:title>Molecular Vision</api:title>
+              </api:record>
+              <api:record source-name="era-2018">
+                <api:title>Molecular Vision</api:title>
+              </api:record>
+            </api:records>
+          </api:journal>
+          <api:relationships href="http://example.test/publications/236775/relationships"/>
+        </api:object>
+      </api:related>
+    </api:relationship>
+  <api:relationship xmlns:api="http://www.symplectic.co.uk/publications/api" id="250642" type-id="8" type="publication-user-authorship" last-modified-when="2019-03-01T11:13:36.65+00:00" href="http://example.test/relationships/250642">
+      <api:is-visible>true</api:is-visible>
+      <api:is-favourite>false</api:is-favourite>
+      <api:related direction="from" category="publication" id="236776">
+        <api:object category="publication" id="236776" last-affected-when="2020-04-17T04:54:33.363+01:00" last-modified-when="2020-04-17T04:54:33.363+01:00" href="http://example.test/publications/236776" created-when="2014-06-10T10:35:41.573+01:00" type-id="5" type="journal-article">
+          <!--Publication type 5 is "journal article"-->
+          <api:ever-approved>true</api:ever-approved>
+          <api:reporting-date-1>2012-06-15</api:reporting-date-1>
+          <api:is-public>true</api:is-public>
+          <api:records>
+            <api:record format="native" id="599819" source-id="3" source-name="wos" source-display-name="Web of Science" id-at-source="WOS:12345">
+              <api:citation-count>24</api:citation-count>
+              <api:native>
+                <api:field name="authors" type="person-list" display-name="Authors">
+                  <api:people>
+                    <api:person>
+                      <api:last-name>Author16</api:last-name>
+                      <api:initials>R</api:initials>
+                      <api:first-names>Author16</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author16</api:first-name>
+                      </api:separate-first-names>
+                      <api:addresses>
+                        <api:address iso-country-code="IN">
+                          <api:line type="organisation">Banaras Hindu University</api:line>
+                          <api:line type="suborganisation">Dept Phys</api:line>
+                          <api:line type="suborganisation">Nanosci &amp; Nanotechnol Unit</api:line>
+                          <api:line type="city">Varanasi</api:line>
+                          <api:line type="state">Uttar Pradesh</api:line>
+                          <api:line type="country">India</api:line>
+                          <api:line type="zip-code">221005</api:line>
+                          <api:grid id="grid.411507.6" href="https://grid.ac/institutes/grid.411507.6" latitude="25.26663" longitude="82.99057"/>
+                        </api:address>
+                      </api:addresses>
+                      <api:identifiers>
+                        <api:identifier scheme="researcherid">H-6510-2011</api:identifier>
+                        <api:identifier scheme="orcid">0000-0001-7065-3259</api:identifier>
+                      </api:identifiers>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author17</api:last-name>
+                      <api:initials>RK</api:initials>
+                      <api:first-names>Author17</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author17</api:first-name>
+                        <api:first-name>Author17</api:first-name>
+                      </api:separate-first-names>
+                      <api:addresses>
+                        <api:address iso-country-code="IN">
+                          <api:line type="organisation">Banaras Hindu University</api:line>
+                          <api:line type="suborganisation">Dept Phys</api:line>
+                          <api:line type="suborganisation">Nanosci &amp; Nanotechnol Unit</api:line>
+                          <api:line type="city">Varanasi</api:line>
+                          <api:line type="state">Uttar Pradesh</api:line>
+                          <api:line type="country">India</api:line>
+                          <api:line type="zip-code">221005</api:line>
+                          <api:grid id="grid.411507.6" href="https://grid.ac/institutes/grid.411507.6" latitude="25.26663" longitude="82.99057"/>
+                        </api:address>
+                      </api:addresses>
+                      <api:identifiers>
+                        <api:identifier scheme="researcherid">B-2721-2008</api:identifier>
+                        <api:identifier scheme="orcid">0000-0001-8884-8775</api:identifier>
+                      </api:identifiers>
+                    </api:person>
+                    <api:person>
+                      <api:links>
+                        <api:link type="elements/user" id="1" href="http://example.test/users/1"/>
+                      </api:links>
+                      <api:last-name>Author18</api:last-name>
+                      <api:initials>J</api:initials>
+                      <api:first-names>Author18</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author18</api:first-name>
+                      </api:separate-first-names>
+                      <api:addresses>
+                        <api:address iso-country-code="IN">
+                          <api:line type="organisation">Banaras Hindu University</api:line>
+                          <api:line type="suborganisation">Dept Phys</api:line>
+                          <api:line type="suborganisation">Nanosci &amp; Nanotechnol Unit</api:line>
+                          <api:line type="city">Varanasi</api:line>
+                          <api:line type="state">Uttar Pradesh</api:line>
+                          <api:line type="country">India</api:line>
+                          <api:line type="zip-code">221005</api:line>
+                          <api:grid id="grid.411507.6" href="https://grid.ac/institutes/grid.411507.6" latitude="25.26663" longitude="82.99057"/>
+                        </api:address>
+                      </api:addresses>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author19</api:last-name>
+                      <api:initials>RS</api:initials>
+                      <api:first-names>Author19</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>R</api:first-name>
+                        <api:first-name>S</api:first-name>
+                      </api:separate-first-names>
+                      <api:addresses>
+                        <api:address iso-country-code="IN">
+                          <api:line type="organisation">Banaras Hindu University</api:line>
+                          <api:line type="suborganisation">Dept Phys</api:line>
+                          <api:line type="suborganisation">Nanosci &amp; Nanotechnol Unit</api:line>
+                          <api:line type="city">Varanasi</api:line>
+                          <api:line type="state">Uttar Pradesh</api:line>
+                          <api:line type="country">India</api:line>
+                          <api:line type="zip-code">221005</api:line>
+                          <api:grid id="grid.411507.6" href="https://grid.ac/institutes/grid.411507.6" latitude="25.26663" longitude="82.99057"/>
+                        </api:address>
+                      </api:addresses>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author20</api:last-name>
+                      <api:initials>ON</api:initials>
+                      <api:first-names>ON</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>O</api:first-name>
+                        <api:first-name>N</api:first-name>
+                      </api:separate-first-names>
+                      <api:addresses>
+                        <api:address iso-country-code="IN">
+                          <api:line type="organisation">Banaras Hindu University</api:line>
+                          <api:line type="suborganisation">Dept Phys</api:line>
+                          <api:line type="suborganisation">Nanosci &amp; Nanotechnol Unit</api:line>
+                          <api:line type="city">Varanasi</api:line>
+                          <api:line type="state">Uttar Pradesh</api:line>
+                          <api:line type="country">India</api:line>
+                          <api:line type="zip-code">221005</api:line>
+                          <api:grid id="grid.411507.6" href="https://grid.ac/institutes/grid.411507.6" latitude="25.26663" longitude="82.99057"/>
+                        </api:address>
+                      </api:addresses>
+                    </api:person>
+                  </api:people>
+                </api:field>
+                <api:field name="author-url" type="text" display-name="Author URL">
+                  <api:text>http://gateway.webofknowledge.com/gateway/Gateway.cgi?foo</api:text>
+                </api:field>
+                <api:field name="doi" type="text" display-name="DOI">
+                  <api:text>10.1016/j.jallcom.2012.02.115</api:text>
+                  <api:links>
+                    <api:link type="doi" href="http://doi.org/10.1016/j.jallcom.2012.02.115"/>
+                    <api:link type="altmetric" href="http://www.altmetric.com/details.php?doi=10.1016/j.jallcom.2012.02.115"/>
+                  </api:links>
+                </api:field>
+                <api:field name="funding-acknowledgements" type="funding-acknowledgements" display-name="Funder Acknowledgement">
+                  <api:funding-acknowledgements>
+                    <api:acknowledgement-text>The authors are grateful to Prof. C.N.R. Rao, Prof. A. K. Raychaudhary and Prof. A. K. Sood their encouragement and support. The Financial support from the DST, UGC, DRDO and MNRE-New Delhi, India is gratefully acknowledged. One of the authors, Rajesh Kumar is grateful to the Council of Scientific and Industrial Research (CSIR)-New Delhi, Government of India for providing a senior research fellowship.</api:acknowledgement-text>
+                    <api:grants>
+                      <api:grant>
+                        <api:organisation>DST</api:organisation>
+                      </api:grant>
+                      <api:grant>
+                        <api:organisation>UGC</api:organisation>
+                      </api:grant>
+                      <api:grant>
+                        <api:organisation>DRDO</api:organisation>
+                      </api:grant>
+                      <api:grant>
+                        <api:organisation>MNRE-New Delhi, India</api:organisation>
+                      </api:grant>
+                      <api:grant>
+                        <api:organisation>Council of Scientific and Industrial Research (CSIR)-New Delhi, Government of India</api:organisation>
+                      </api:grant>
+                    </api:grants>
+                  </api:funding-acknowledgements>
+                </api:field>
+                <api:field name="issn" type="text" display-name="ISSN">
+                  <api:text>0925-8388</api:text>
+                  <api:links>
+                    <api:link type="elements/journal" href="http://example.test/journals/351751"/>
+                  </api:links>
+                </api:field>
+                <api:field name="journal" type="text" display-name="Journal">
+                  <api:text>JOURNAL OF ALLOYS AND COMPOUNDS</api:text>
+                </api:field>
+                <api:field name="keywords" type="keyword-list" display-name="Keywords">
+                  <api:keywords>
+                    <api:keyword>Science &amp; Technology</api:keyword>
+                    <api:keyword>Physical Sciences</api:keyword>
+                    <api:keyword>Technology</api:keyword>
+                    <api:keyword>Chemistry, Physical</api:keyword>
+                    <api:keyword>Materials Science, Multidisciplinary</api:keyword>
+                    <api:keyword>Metallurgy &amp; Metallurgical Engineering</api:keyword>
+                    <api:keyword>Chemistry</api:keyword>
+                    <api:keyword>Materials Science</api:keyword>
+                    <api:keyword>Graphene sheets</api:keyword>
+                    <api:keyword>Nanocomposite</api:keyword>
+                    <api:keyword>Photoluminescence spectra</api:keyword>
+                    <api:keyword>Microstructures</api:keyword>
+                    <api:keyword>WALL CARBON NANOTUBES</api:keyword>
+                    <api:keyword>GRAPHITE OXIDE</api:keyword>
+                    <api:keyword>SOLVOTHERMAL SYNTHESIS</api:keyword>
+                    <api:keyword>ASSISTED GROWTH</api:keyword>
+                    <api:keyword>NANORODS</api:keyword>
+                    <api:keyword>REDUCTION</api:keyword>
+                    <api:keyword>SUPERCAPACITORS</api:keyword>
+                    <api:keyword>FABRICATION</api:keyword>
+                    <api:keyword>NANOSHEETS</api:keyword>
+                    <api:keyword>COMPOSITE</api:keyword>
+                  </api:keywords>
+                </api:field>
+                <api:field name="language" type="text" display-name="Language">
+                  <api:text>English</api:text>
+                </api:field>
+                <api:field name="pagination" type="pagination" display-name="Pagination">
+                  <api:pagination>
+                    <api:begin-page>129</api:begin-page>
+                    <api:end-page>134</api:end-page>
+                    <api:page-count>6</api:page-count>
+                  </api:pagination>
+                </api:field>
+                <api:field name="publication-date" type="date" display-name="Publication date">
+                  <api:date>
+                    <api:day>15</api:day>
+                    <api:month>6</api:month>
+                    <api:year>2012</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="publication-status" type="text" display-name="Status">
+                  <api:text>Published</api:text>
+                </api:field>
+                <api:field name="publisher" type="text" display-name="Publisher">
+                  <api:text>ELSEVIER SCIENCE SA</api:text>
+                </api:field>
+                <api:field name="title" type="text" display-name="Title">
+                  <api:text>Synthesis, characterization and optical properties of graphene sheets-ZnO multipod nanocomposites</api:text>
+                </api:field>
+                <api:field name="types" type="list" display-name="Sub types">
+                  <api:items>
+                    <api:item>Article</api:item>
+                    <api:item>Journal</api:item>
+                  </api:items>
+                </api:field>
+                <api:field name="volume" type="text" display-name="Volume">
+                  <api:text>526</api:text>
+                </api:field>
+              </api:native>
+            </api:record>
+            <api:record format="native" id="606753" source-id="13" source-name="crossref" source-display-name="Crossref" id-at-source="10.1016/j.jallcom.2012.02.115">
+              <api:native>
+                <api:field name="authors" type="person-list" display-name="Authors">
+                  <api:people>
+                    <api:person>
+                      <api:last-name>Author21</api:last-name>
+                      <api:initials>R</api:initials>
+                      <api:first-names>Author21</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author21</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author22</api:last-name>
+                      <api:initials>RK</api:initials>
+                      <api:first-names>Author22</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author22</api:first-name>
+                        <api:first-name>Author22</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:links>
+                        <api:link type="elements/user" id="1" href="http://example.test/users/1"/>
+                      </api:links>
+                      <api:last-name>Author23</api:last-name>
+                      <api:initials>J</api:initials>
+                      <api:first-names>Author23</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>Author23</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author24</api:last-name>
+                      <api:initials>RS</api:initials>
+                      <api:first-names>Author24</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>R</api:first-name>
+                        <api:first-name>S</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                    <api:person>
+                      <api:last-name>Author25</api:last-name>
+                      <api:initials>ON</api:initials>
+                      <api:first-names>Author25</api:first-names>
+                      <api:separate-first-names>
+                        <api:first-name>O</api:first-name>
+                        <api:first-name>N</api:first-name>
+                      </api:separate-first-names>
+                    </api:person>
+                  </api:people>
+                </api:field>
+                <api:field name="doi" type="text" display-name="DOI">
+                  <api:text>10.1016/j.jallcom.2012.02.115</api:text>
+                  <api:links>
+                    <api:link type="doi" href="http://doi.org/10.1016/j.jallcom.2012.02.115"/>
+                    <api:link type="altmetric" href="http://www.altmetric.com/details.php?doi=10.1016/j.jallcom.2012.02.115"/>
+                  </api:links>
+                </api:field>
+                <api:field name="issn" type="text" display-name="ISSN">
+                  <api:text>0925-8388</api:text>
+                  <api:links>
+                    <api:link type="elements/journal" href="http://example.test/journals/351751"/>
+                  </api:links>
+                </api:field>
+                <api:field name="journal" type="text" display-name="Journal">
+                  <api:text>Journal of Alloys and Compounds</api:text>
+                </api:field>
+                <api:field name="language" type="text" display-name="Language">
+                  <api:text>en</api:text>
+                </api:field>
+                <api:field name="pagination" type="pagination" display-name="Pagination">
+                  <api:pagination>
+                    <api:begin-page>129</api:begin-page>
+                    <api:end-page>134</api:end-page>
+                  </api:pagination>
+                </api:field>
+                <api:field name="publication-date" type="date" display-name="Publication date">
+                  <api:date>
+                    <api:month>6</api:month>
+                    <api:year>2012</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="publication-status" type="text" display-name="Status">
+                  <api:text>Published</api:text>
+                </api:field>
+                <api:field name="publisher" type="text" display-name="Publisher">
+                  <api:text>Elsevier BV</api:text>
+                </api:field>
+                <api:field name="record-created-at-source-date" type="date" display-name="Record created at source">
+                  <api:date>
+                    <api:day>5</api:day>
+                    <api:month>3</api:month>
+                    <api:year>2012</api:year>
+                  </api:date>
+                </api:field>
+                <api:field name="title" type="text" display-name="Title">
+                  <api:text>Synthesis, characterization and optical properties of graphene sheets-ZnO multipod nanocomposites</api:text>
+                </api:field>
+                <api:field name="volume" type="text" display-name="Volume">
+                  <api:text>526</api:text>
+                </api:field>
+              </api:native>
+            </api:record>
+          </api:records>
+          <api:fields/>
+          <api:all-labels type="keyword-list">
+            <api:keywords>
+              <api:keyword origin="record-data" source="wos">Science &amp; Technology</api:keyword>
+              <api:keyword origin="record-data" source="wos">Physical Sciences</api:keyword>
+              <api:keyword origin="record-data" source="wos">Technology</api:keyword>
+              <api:keyword origin="record-data" source="wos">Chemistry, Physical</api:keyword>
+              <api:keyword origin="record-data" source="wos">Materials Science, Multidisciplinary</api:keyword>
+              <api:keyword origin="record-data" source="wos">Metallurgy &amp; Metallurgical Engineering</api:keyword>
+              <api:keyword origin="record-data" source="wos">Chemistry</api:keyword>
+              <api:keyword origin="record-data" source="wos">Materials Science</api:keyword>
+              <api:keyword origin="record-data" source="wos">Graphene sheets</api:keyword>
+              <api:keyword origin="record-data" source="wos">Nanocomposite</api:keyword>
+              <api:keyword origin="record-data" source="wos">Photoluminescence spectra</api:keyword>
+              <api:keyword origin="record-data" source="wos">Microstructures</api:keyword>
+              <api:keyword origin="record-data" source="wos">WALL CARBON NANOTUBES</api:keyword>
+              <api:keyword origin="record-data" source="wos">GRAPHITE OXIDE</api:keyword>
+              <api:keyword origin="record-data" source="wos">SOLVOTHERMAL SYNTHESIS</api:keyword>
+              <api:keyword origin="record-data" source="wos">ASSISTED GROWTH</api:keyword>
+              <api:keyword origin="record-data" source="wos">NANORODS</api:keyword>
+              <api:keyword origin="record-data" source="wos">REDUCTION</api:keyword>
+              <api:keyword origin="record-data" source="wos">SUPERCAPACITORS</api:keyword>
+              <api:keyword origin="record-data" source="wos">FABRICATION</api:keyword>
+              <api:keyword origin="record-data" source="wos">NANOSHEETS</api:keyword>
+              <api:keyword origin="record-data" source="wos">COMPOSITE</api:keyword>
+              <api:keyword scheme="for" origin="issn-inferred">0204 Condensed Matter Physics</api:keyword>
+              <api:keyword scheme="for" origin="issn-inferred">0912 Materials Engineering</api:keyword>
+              <api:keyword scheme="for" origin="issn-inferred">0914 Resources Engineering and Extractive Metallurgy</api:keyword>
+              <api:keyword scheme="science-metrix" origin="issn-inferred">Materials</api:keyword>
+            </api:keywords>
+          </api:all-labels>
+          <api:journal issn="0925-8388" href="http://example.test/journals/351751">
+            <api:records>
+              <api:record source-name="era-2015">
+                <api:title>Journal of Alloys and Compounds</api:title>
+              </api:record>
+              <api:record source-name="snip">
+                <api:title>Journal of Alloys and Compounds</api:title>
+              </api:record>
+              <api:record source-name="sherpa-romeo">
+                <api:title>Journal of Alloys and Compounds</api:title>
+              </api:record>
+              <api:record source-name="sherpa-romeo">
+                <api:title>Journal of Alloys and Compounds</api:title>
+              </api:record>
+              <api:record source-name="sjr">
+                <api:title>Journal of Alloys and Compounds</api:title>
+              </api:record>
+              <api:record source-name="era-2012">
+                <api:title>Journal of Alloys and Compounds</api:title>
+              </api:record>
+              <api:record source-name="science-metrix">
+                <api:title>Journal of Alloys and Compounds</api:title>
+              </api:record>
+              <api:record source-name="jcr">
+                <api:title>JOURNAL OF ALLOYS AND COMPOUNDS</api:title>
+              </api:record>
+              <api:record source-name="era-2010">
+                <api:title>Journal of Alloys and Compounds</api:title>
+              </api:record>
+              <api:record source-name="era-2018">
+                <api:title>Journal of Alloys and Compounds</api:title>
+              </api:record>
+            </api:records>
+          </api:journal>
+          <api:relationships href="http://example.test/publications/236776/relationships"/>
+        </api:object>
+      </api:related>
+    </api:relationship>
+</data>

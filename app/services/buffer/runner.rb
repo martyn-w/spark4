@@ -52,7 +52,6 @@ module Buffer
     def write_items(items, filename)
       output_file = File.join(Settings.output, filename)
       output_dir = File.dirname(output_file)
-      puts "WRITING: #{output_file}"
       FileUtils.mkpath(output_dir)
       File.write(output_file, items.to_xml)
     end

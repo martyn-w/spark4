@@ -7,8 +7,8 @@ module Buffer
     HEADERS = { Accept: 'application/atom+xml' }
     NAMESPACES = { 'atom': 'http://www.w3.org/2005/Atom', 'api': 'http://www.symplectic.co.uk/publications/api' }
 
-    def initialize(buffer_setting_source)
-      @buffer_setting_source = buffer_setting_source
+    def initialize(buffer_setting)
+      @buffer_setting_source = buffer_setting.source
       @connection = Faraday.new(Settings.api.url, request: { timeout: Settings.api.timeout || DEFAULT_TIMEOUT }) do |conn|
         conn.basic_auth(Settings.api.username, Settings.api.password) if Settings.api.username.present?
         conn.request(:retry, Settings.api.retries.to_h) if Settings.api.retries.present? # automatically retry requests if timeout

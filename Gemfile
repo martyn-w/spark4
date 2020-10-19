@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.1'
+ruby '2.7.2'
 
 gem 'config', '~> 2.2.1'
 gem 'faraday', '~> 1.0.1'
@@ -10,7 +10,7 @@ gem 'nokogiri', '~> 1.10.10'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
@@ -22,6 +22,7 @@ group :development, :test do
   gem 'fakefs', '~> 1.2.2', require: "fakefs/safe"
   gem 'rspec-rails', '~> 4.0'
   gem 'rubocop', '~> 0.88', require: false
+  gem 'equivalent-xml', '~> 0.6.0'
   gem 'webmock', '~> 3.8.3'
 end
 
