@@ -7,18 +7,16 @@ module Buffer
     HEADERS = { Accept: 'application/atom+xml' }
     NAMESPACES = { 'atom': 'http://www.w3.org/2005/Atom', 'api': 'http://www.symplectic.co.uk/publications/api' }
 
-    def initialize(buffer_setting)
-      @buffer_setting_source = buffer_setting.source
-      @connection = Faraday.new(Settings.api.url, request: { timeout: Settings.api.timeout || DEFAULT_TIMEOUT }) do |conn|
-        conn.basic_auth(Settings.api.username, Settings.api.password) if Settings.api.username.present?
-        conn.request(:retry, Settings.api.retries.to_h) if Settings.api.retries.present? # automatically retry requests if timeout
-      end
+    attr_reader :source, :connection, :current_page
+
+    def initialize(source)
+      @source = source
+      @connection = build_connection
       @current_page = nil
     end
 
     # the block will be called with the current page of data
-    def read(endpoint = @buffer_setting_source.api.endpoint, &block)
-      # byebug
+    def read(endpoint = source.api.endpoint, &block)
       # first page
       fetch_page(endpoint, first_page_params)
       yield current_items if block_given?
@@ -32,8 +30,15 @@ module Buffer
 
     private
 
+    def build_connection
+      Faraday.new(Settings.api.url, request: { timeout: Settings.api.timeout || DEFAULT_TIMEOUT }) do |conn|
+        conn.basic_auth(Settings.api.username, Settings.api.password) if Settings.api.username.present?
+        conn.request(:retry, Settings.api.retries.to_h) if Settings.api.retries.present? # automatically retry requests if timeout
+      end
+    end
+
     def fetch_page(endpoint, params = nil)
-      response = @connection.get(endpoint, params, HEADERS)
+      response = connection.get(endpoint, params, HEADERS)
 
       raise "Error retrieving data from api #{endpoint}" unless response.success?
 
@@ -41,15 +46,15 @@ module Buffer
     end
 
     def current_items
-      @current_page.xpath(@buffer_setting_source.select, NAMESPACES)
+      current_page.xpath(source.select, NAMESPACES)
     end
 
     def first_page_params
-      @buffer_setting_source.api.params.to_h
+      source.api.params.to_h
     end
 
     def next_page_url
-      @current_page.at_xpath('/atom:feed/api:pagination/api:page[@position="next"]/@href', NAMESPACES)&.value if @current_page.present?
+      current_page.at_xpath('/atom:feed/api:pagination/api:page[@position="next"]/@href', NAMESPACES)&.value if current_page.present?
     end
 
     def has_next_page?

@@ -20,11 +20,9 @@ module Buffer
           when 'buffer_related_items'
             items.each do |object_item|
               related_data = Nokogiri::XML('<data/>')
-
-              related_item_url = object_item.at_xpath(buffer_setting.buffer_item.api.endpoint.xsl).value
-              filename = object_item.xpath(buffer_setting.buffer_item.filename.xsl)
-
-              item_reader = Reader.new(buffer_setting.buffer_item)
+              related_item_url = object_item.at_xpath(buffer_setting.related_item.api.endpoint.xsl).value
+              filename = object_item.xpath(buffer_setting.related_item.filename.xsl)
+              item_reader = Reader.new(buffer_setting.related_item)
               item_reader.read(related_item_url) do |related_items|
                 # <api:relationship id="246137" type-id="8" type="publication-user-authorship"
                 related_data.root << related_items
