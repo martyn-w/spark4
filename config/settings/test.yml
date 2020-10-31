@@ -32,6 +32,7 @@ buffers:
           detail: full
       select: '/atom:feed/atom:entry/api:object'
     related_item:
+      data_for: 'api:relationships'
       api:
         endpoint:
           xsl: 'api:relationships/@href'
