@@ -6,7 +6,7 @@ class PeopleController < ApplicationController
     if File.exists?(filename)
       render body: transform(person_index_xslt, filename), status: :ok, content_type: 'text/html'
     else
-      render plain: "Not found: index", status: :not_found
+      render plain: "Index file not found: #{filename}", status: :not_found
     end
   end
 
@@ -19,6 +19,8 @@ class PeopleController < ApplicationController
       render plain: "Not found: #{params[:id]}", status: :not_found
     end
   end
+
+private
 
   def transform(stylesheet, filename)
     doc = Nokogiri::XML(File.open(filename))
