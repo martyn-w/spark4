@@ -45,13 +45,13 @@ RSpec.describe Buffer::Reader do
     end
 
     it 'fetches all pages and extracts all the objects' do
-      data = Nokogiri::XML('<data/>')
+      data = Nokogiri::XML('<api:relationships/>')
 
       reader.read('users/1/relationships') do |items|
         data.root << items
       end
 
-      expect(data).to be_equivalent_to(file_fixture('spark-generated/people/user1.xml').read)
+      expect(data).to be_equivalent_to(file_fixture('spark-generated/relationships/user1.xml').read)
     end
   end
 end
