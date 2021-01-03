@@ -3,14 +3,17 @@ require 'webmock/rspec'
 
 RSpec.describe Buffer::Runner do
 
-  subject(:runner) { described_class.new(mode) }
+  subject(:runner) { described_class.new(mode, logger) }
+
+  let(:logger) { Logger.new(nil) }
 
   describe 'people index' do
     let(:mode) { :full }
-    let!(:people_index_xml) { file_fixture('spark-generated/people/index.xml').read }
-    let!(:user1_xml) { file_fixture('spark-generated/people/user1.xml').read }
-    let!(:user2_xml) { file_fixture('spark-generated/people/user2.xml').read }
-    let!(:user3_xml) { file_fixture('spark-generated/people/user3.xml').read }
+    let!(:person_index_xml) { file_fixture('spark-generated/person/index.xml').read }
+    let!(:user1_xml) { file_fixture('spark-generated/person/user1.xml').read }
+    let!(:user2_xml) { file_fixture('spark-generated/person/user2.xml').read }
+    let!(:user3_xml) { file_fixture('spark-generated/person/user3.xml').read }
+    let!(:recent_sync_yaml) { file_fixture('spark-generated/recent-sync.yml').read }
 
     before do
       stub_request(:get, 'http://example.test/users?detail=full&per-page=2')
@@ -32,31 +35,80 @@ RSpec.describe Buffer::Runner do
           to_return(status: 200, body: "", headers: {})
     end
 
-    it 'generates a people/index file' do
+    it 'generates a person/index file' do
       FakeFS.with_fresh do
         runner.run
-        expect(File.read('data/people/index.xml')).to be_equivalent_to(people_index_xml)
+        expect(File.read(File.join(Settings.output,'person/index.xml'))).to be_equivalent_to(person_index_xml)
       end
     end
 
-    it 'generates a people/user1 file' do
+    it 'generates a person/user1 file' do
       FakeFS.with_fresh do
         runner.run
-        expect(File.read('data/people/user1.xml')).to be_equivalent_to(user1_xml)
+        expect(File.read(File.join(Settings.output,'person/user1.xml'))).to be_equivalent_to(user1_xml)
       end
     end
 
-    it 'generates a people/user2 file' do
+    it 'generates a person/user2 file' do
       FakeFS.with_fresh do
         runner.run
-        expect(File.read('data/people/user2.xml')).to be_equivalent_to(user2_xml)
+        expect(File.read(File.join(Settings.output,'person/user2.xml'))).to be_equivalent_to(user2_xml)
       end
     end
 
-    it 'generates a people/user3 file' do
+    it 'generates a person/user3 file' do
       FakeFS.with_fresh do
         runner.run
-        expect(File.read('data/people/user3.xml')).to be_equivalent_to(user3_xml)
+        expect(File.read(File.join(Settings.output, 'person/user3.xml'))).to be_equivalent_to(user3_xml)
+      end
+    end
+
+    describe 'incremental updates' do
+      Timecop.freeze '2020-01-01' do
+
+        context 'without a sync.yml file it should do a full sync' do
+          it 'should foo' do
+            FakeFS.with_fresh do
+              FileUtils.mkdir_p(File.join(Settings.output, 'person'))
+              File.write(File.join(Settings.output, 'person/index.xml'), person_index_xml)
+              File.write(File.join(Settings.output, 'person/user1.xml'), user1_xml)
+              File.write(File.join(Settings.output, 'person/user2.xml'), user2_xml)
+              File.write(File.join(Settings.output, 'person/user3.xml'), user3_xml)
+
+              runner.run
+
+              expect(a_request(:get, "http://example.test/users?detail=full&per-page=2")).to have_been_made.times(1)
+              expect(a_request(:get, "http://example.test/users?detail=full&per-page=2&after-id=2")).to have_been_made.times(1)
+              expect(a_request(:get, "http://example.test/users/1/relationships?detail=full&per-page=2")).to have_been_made.times(1)
+              expect(a_request(:get, "http://example.test/users/1/relationships?after-id=246138&detail=full&modified-since=2019-03-01T11:13:36.650&per-page=2")).to have_been_made.times(1)
+              expect(a_request(:get, "http://example.test/users/2/relationships?detail=full&per-page=2")).to have_been_made.times(1)
+              expect(a_request(:get, "http://example.test/users/3/relationships?detail=full&per-page=2")).to have_been_made.times(1)
+            end
+          end
+        end
+
+        context 'with a recent sync.yml file it should not do a full sync' do
+          it 'should foo' do
+            FakeFS.with_fresh do
+              FileUtils.mkdir_p(File.join(Settings.output, 'person'))
+              File.write(File.join(Settings.output, 'person/index.xml'), person_index_xml)
+              File.write(File.join(Settings.output, 'person/user1.xml'), user1_xml)
+              File.write(File.join(Settings.output, 'person/user2.xml'), user2_xml)
+              File.write(File.join(Settings.output, 'person/user3.xml'), user3_xml)
+              File.write(File.join(Settings.output, 'sync.yml'), recent_sync_yaml)
+
+              runner.run
+
+              expect(a_request(:get, "http://example.test/users?detail=full&per-page=2")).to have_been_made.times(1)
+              expect(a_request(:get, "http://example.test/users?detail=full&per-page=2&after-id=2")).to have_been_made.times(1)
+              expect(a_request(:get, "http://example.test/users/1/relationships?detail=full&per-page=2")).not_to have_been_made
+              expect(a_request(:get, "http://example.test/users/1/relationships?after-id=246138&detail=full&modified-since=2019-03-01T11:13:36.650&per-page=2")).not_to have_been_made
+              expect(a_request(:get, "http://example.test/users/2/relationships?detail=full&per-page=2")).not_to have_been_made
+              expect(a_request(:get, "http://example.test/users/3/relationships?detail=full&per-page=2")).not_to have_been_made
+            end
+          end
+        end
+
       end
     end
   end

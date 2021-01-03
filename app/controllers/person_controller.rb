@@ -1,7 +1,7 @@
-class PeopleController < ApplicationController
+class PersonController < ApplicationController
 
   def index
-    filename = File.join(Settings.output,'people', 'index.xml')
+    filename = File.join(Settings.output,'person', 'index.xml')
 
     if File.exists?(filename)
       render body: transform(person_index_xslt, filename), status: :ok, content_type: 'text/html'
@@ -11,7 +11,7 @@ class PeopleController < ApplicationController
   end
 
   def show
-    filename = File.join(Settings.output,'people', "#{params[:id]}.xml")
+    filename = File.join(Settings.output,'person', "#{params[:id]}.xml")
 
     if File.exists?(filename)
       render body: transform(person_xslt, filename), status: :ok, content_type: 'text/html'

@@ -22,6 +22,7 @@ group :development, :test do
   gem 'fakefs', '~> 1.2.2', require: "fakefs/safe"
   gem 'rspec-rails', '~> 4.0'
   gem 'rubocop', '~> 0.88', require: false
+  gem 'timecop', '~> 0.9.2'
   gem 'equivalent-xml', '~> 0.6.0'
   gem 'webmock', '~> 3.8.3'
 end

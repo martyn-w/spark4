@@ -1,15 +1,28 @@
 module Buffer
   class Runner
+    require 'yaml'
 
-    def initialize(mode)
+    attr_reader :logger, :sync_filename
+
+    def initialize(mode, logger = nil)
       @mode = mode
+      @logger = logger || get_logger
+      @sync_filename = File.join(Settings.output, 'sync.yml')
     end
 
     def run
+      logger.info "Synchronising with: #{Settings.api.url} and outputing to #{Settings.output}"
+      latest_timestamp = read_sync_timestamp
+      logger.info "Latest sync timestamp: #{latest_timestamp}"
+
+      next_timestamp = DateTime.now
+
       Settings.buffers.each do |buffer_setting|
         next if buffer_setting.enabled == false
 
-        reader = Reader.new(buffer_setting.source)
+        logger.info "Reading #{buffer_setting.name}"
+
+        reader = Reader.new(buffer_setting.source, logger)
 
         case buffer_setting.mode
         when 'write_items'
@@ -23,31 +36,67 @@ module Buffer
           reader.read do |items|
             items.each do |object_item|
               buffer_setting.related_item.tap do |related_settings|
-                data = Nokogiri::XML::Document.new
-                data.add_child(object_item)
+                object_last_affected = DateTime.parse(object_item.get_attribute('last-modified-when')) rescue nil
+                related_data_filename = object_item.xpath(related_settings.filename.xsl)
 
-                related_item_url = data.root.at_xpath(related_settings.api.endpoint.xsl).value
-                filename = data.root.xpath(related_settings.filename.xsl)
-                item_reader = Reader.new(related_settings)
-                item_for = data.root.at_xpath(related_settings.data_for)
+                # only fetch the related data if it is newer than latest_timestamp or doesn't already exist
+                if latest_timestamp.nil? || object_last_affected.nil? || !output_file_exists?(related_data_filename) || latest_timestamp < object_last_affected
 
-                item_reader.read(related_item_url) do |related_items|
-                  item_for << related_items
+                  data = Nokogiri::XML::Document.new
+                  data.add_child(object_item)
+
+                  related_item_url = data.root.at_xpath(related_settings.api.endpoint.xsl).value
+
+                  item_reader = Reader.new(related_settings, logger)
+                  item_for = data.root.at_xpath(related_settings.data_for)
+
+                  item_reader.read(related_item_url) do |related_items|
+                    item_for << related_items
+                  end
+
+                  write_items(data, related_data_filename)
+                else
+                  logger.info "Skipping #{related_data_filename} (last modified #{object_last_affected})"
                 end
-
-                write_items(data, filename)
               end
             end
           end
         end
       end
+
+      write_sync_timestamp(next_timestamp)
+    end
+
+
+    def read_sync_timestamp
+      DateTime.parse(YAML.load_file(sync_filename)[:timestamp]) if File.exists?(sync_filename)
+    end
+
+    def write_sync_timestamp(timestamp)
+      logger.info "Updating sync timestamp: #{timestamp.iso8601}"
+      File.open(sync_filename, 'w') { |file| file.write({timestamp: timestamp.iso8601}.to_yaml) }
     end
 
     def write_items(items, filename)
       output_file = File.join(Settings.output, filename)
       output_dir = File.dirname(output_file)
       FileUtils.mkpath(output_dir)
+      logger.debug("writing #{output_file}")
       File.write(output_file, items.to_xml)
+    end
+
+    def output_file_exists?(filename)
+      File.exists?(File.join(Settings.output, filename))
+    end
+
+    def get_logger
+      if Settings.log.present?
+        log = Logger.new(Settings.log.filename, Settings.log.shift_age, Settings.log.shift_size)
+        log.datetime_format = Settings.log.datetime_format
+      else
+        log = Logger.new(STDOUT)
+      end
+      log
     end
   end
 end

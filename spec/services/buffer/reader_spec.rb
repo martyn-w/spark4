@@ -1,8 +1,9 @@
 require 'webmock/rspec'
 
 RSpec.describe Buffer::Reader do
-  subject(:reader) { described_class.new(buffer_source) }
+  subject(:reader) { described_class.new(buffer_source, logger) }
 
+  let(:logger) { Logger.new(nil) }
   let(:accept) { 'application/atom+xml' }
   let(:authorization) { "Basic #{Base64.strict_encode64('USERNAME:PASSWORD')}" }
   let(:namespaces) { { 'atom': 'http://www.w3.org/2005/Atom', 'api': 'http://www.symplectic.co.uk/publications/api' } }
@@ -27,7 +28,7 @@ RSpec.describe Buffer::Reader do
         data.root << items
       end
 
-      expect(data).to be_equivalent_to(file_fixture('spark-generated/people/index.xml').read)
+      expect(data).to be_equivalent_to(file_fixture('spark-generated/person/index.xml').read)
     end
   end
 

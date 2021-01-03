@@ -1,4 +1,4 @@
-output: data/
+output: data.test/
 
 api:
   url: http://example.test/
@@ -12,7 +12,7 @@ buffers:
   - name: person_index
     enabled: true
     mode: write_items
-    filename: 'people/index.xml'
+    filename: 'person/index.xml'
     source:
       api:
         endpoint: users
@@ -25,12 +25,8 @@ buffers:
     enabled: true
     mode: buffer_related_items
     source:
-      api:
-        endpoint: users
-        params:
-          per-page: 2
-          detail: full
-      select: '/atom:feed/atom:entry/api:object'
+      filename: "person/index.xml"
+      select: '/data/api:object'
     related_item:
       data_for: 'api:relationships'
       api:
@@ -41,7 +37,7 @@ buffers:
           per-page: 2
       select: "/atom:feed/atom:entry/api:relationship[api:related/api:object/@category='publication']"
       filename:
-        xsl: "concat('people/',@proprietary-id,'.xml')"
+        xsl: "concat('person/',@proprietary-id,'.xml')"
 
 #      api:
 #        endpoint: "users/#{id}/relationships"
