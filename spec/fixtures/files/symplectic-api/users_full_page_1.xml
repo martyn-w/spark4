@@ -17,7 +17,7 @@
     </api:object>
   </entry>
   <entry>
-    <api:object category="user" id="2" proprietary-id="user2" authenticating-authority="Internal" username="username2" last-affected-when="2018-10-12T11:39:54.973+01:00" last-modified-when="2018-10-12T11:39:54.973+01:00" href="http://example.test/users/2" created-when="2015-04-24T11:02:50.087+01:00" type-id="1" type="person">
+    <api:object category="user" id="2" proprietary-id="user2" authenticating-authority="Internal" username="username2" last-affected-when="2022-10-12T11:39:54.973+01:00" last-modified-when="2022-10-12T11:39:54.973+01:00" href="http://example.test/users/2" created-when="2015-04-24T11:02:50.087+01:00" type-id="1" type="person">
       <api:is-public>false</api:is-public>
       <api:last-name>Two</api:last-name>
       <api:email-address>user2@example.test</api:email-address>

@@ -14,6 +14,7 @@ RSpec.describe Buffer::Runner do
     let!(:user2_xml) { file_fixture('spark-generated/person/user2.xml').read }
     let!(:user3_xml) { file_fixture('spark-generated/person/user3.xml').read }
     let!(:recent_sync_yaml) { file_fixture('spark-generated/recent-sync.yml').read }
+    let!(:old_sync_yaml) { file_fixture('spark-generated/old-sync.yml').read }
 
     before do
       stub_request(:get, 'http://example.test/users?detail=full&per-page=2')
@@ -64,51 +65,68 @@ RSpec.describe Buffer::Runner do
     end
 
     describe 'incremental updates' do
-      Timecop.freeze '2020-01-01' do
 
-        context 'without a sync.yml file it should do a full sync' do
-          it 'should foo' do
-            FakeFS.with_fresh do
-              FileUtils.mkdir_p(File.join(Settings.output, 'person'))
-              File.write(File.join(Settings.output, 'person/index.xml'), person_index_xml)
-              File.write(File.join(Settings.output, 'person/user1.xml'), user1_xml)
-              File.write(File.join(Settings.output, 'person/user2.xml'), user2_xml)
-              File.write(File.join(Settings.output, 'person/user3.xml'), user3_xml)
 
-              runner.run
+      before do
+        FakeFS.with_fresh do
+          FileUtils.mkdir_p(File.join(Settings.output, 'person'))
+          File.write(File.join(Settings.output, 'person/index.xml'), person_index_xml)
+          File.write(File.join(Settings.output, 'person/user1.xml'), user1_xml)
+          File.write(File.join(Settings.output, 'person/user2.xml'), user2_xml)
+          File.write(File.join(Settings.output, 'person/user3.xml'), user3_xml)
 
-              expect(a_request(:get, "http://example.test/users?detail=full&per-page=2")).to have_been_made.times(1)
-              expect(a_request(:get, "http://example.test/users?detail=full&per-page=2&after-id=2")).to have_been_made.times(1)
-              expect(a_request(:get, "http://example.test/users/1/relationships?detail=full&per-page=2")).to have_been_made.times(1)
-              expect(a_request(:get, "http://example.test/users/1/relationships?after-id=246138&detail=full&modified-since=2019-03-01T11:13:36.650&per-page=2")).to have_been_made.times(1)
-              expect(a_request(:get, "http://example.test/users/2/relationships?detail=full&per-page=2")).to have_been_made.times(1)
-              expect(a_request(:get, "http://example.test/users/3/relationships?detail=full&per-page=2")).to have_been_made.times(1)
-            end
-          end
+          sync_xml
+
+          runner.run
+        end
+      end
+
+      context 'without a sync.xml file' do
+        let(:sync_xml) { nil }
+
+        it 'retrieves the user list' do
+          expect(a_request(:get, "http://example.test/users?detail=full&per-page=2")).to have_been_made.times(1)
+          expect(a_request(:get, "http://example.test/users?detail=full&per-page=2&after-id=2")).to have_been_made.times(1)
         end
 
-        context 'with a recent sync.yml file it should not do a full sync' do
-          it 'should foo' do
-            FakeFS.with_fresh do
-              FileUtils.mkdir_p(File.join(Settings.output, 'person'))
-              File.write(File.join(Settings.output, 'person/index.xml'), person_index_xml)
-              File.write(File.join(Settings.output, 'person/user1.xml'), user1_xml)
-              File.write(File.join(Settings.output, 'person/user2.xml'), user2_xml)
-              File.write(File.join(Settings.output, 'person/user3.xml'), user3_xml)
-              File.write(File.join(Settings.output, 'sync.yml'), recent_sync_yaml)
+        it 'retrieves the relationships' do
+          expect(a_request(:get, "http://example.test/users/1/relationships?detail=full&per-page=2")).to have_been_made.times(1)
+          expect(a_request(:get, "http://example.test/users/1/relationships?after-id=246138&detail=full&modified-since=2019-03-01T11:13:36.650&per-page=2")).to have_been_made.times(1)
+          expect(a_request(:get, "http://example.test/users/2/relationships?detail=full&per-page=2")).to have_been_made.times(1)
+          expect(a_request(:get, "http://example.test/users/3/relationships?detail=full&per-page=2")).to have_been_made.times(1)
+        end
+      end
 
-              runner.run
+      context 'with a recent sync.xml file' do
+        let(:sync_xml) { File.write(File.join(Settings.output, 'sync.yml'), recent_sync_yaml) }
 
-              expect(a_request(:get, "http://example.test/users?detail=full&per-page=2")).to have_been_made.times(1)
-              expect(a_request(:get, "http://example.test/users?detail=full&per-page=2&after-id=2")).to have_been_made.times(1)
-              expect(a_request(:get, "http://example.test/users/1/relationships?detail=full&per-page=2")).not_to have_been_made
-              expect(a_request(:get, "http://example.test/users/1/relationships?after-id=246138&detail=full&modified-since=2019-03-01T11:13:36.650&per-page=2")).not_to have_been_made
-              expect(a_request(:get, "http://example.test/users/2/relationships?detail=full&per-page=2")).not_to have_been_made
-              expect(a_request(:get, "http://example.test/users/3/relationships?detail=full&per-page=2")).not_to have_been_made
-            end
-          end
+        it 'retrieves the user list' do
+          expect(a_request(:get, "http://example.test/users?detail=full&per-page=2")).to have_been_made.times(1)
+          expect(a_request(:get, "http://example.test/users?detail=full&per-page=2&after-id=2")).to have_been_made.times(1)
         end
 
+        it 'does not retrieve the relationships' do
+          expect(a_request(:get, "http://example.test/users/1/relationships?detail=full&per-page=2")).not_to have_been_made
+          expect(a_request(:get, "http://example.test/users/1/relationships?after-id=246138&detail=full&modified-since=2019-03-01T11:13:36.650&per-page=2")).not_to have_been_made
+          expect(a_request(:get, "http://example.test/users/2/relationships?detail=full&per-page=2")).to have_been_made.times(1)
+          expect(a_request(:get, "http://example.test/users/3/relationships?detail=full&per-page=2")).not_to have_been_made
+        end
+      end
+
+      context 'with an old sync.xml file' do
+        let(:sync_xml) { File.write(File.join(Settings.output, 'sync.yml'), old_sync_yaml) }
+
+        it 'retrieves the user list' do
+          expect(a_request(:get, "http://example.test/users?detail=full&per-page=2")).to have_been_made.times(1)
+          expect(a_request(:get, "http://example.test/users?detail=full&per-page=2&after-id=2")).to have_been_made.times(1)
+        end
+
+        it 'retrieves the relationships' do
+          expect(a_request(:get, "http://example.test/users/1/relationships?detail=full&per-page=2")).to have_been_made.times(1)
+          expect(a_request(:get, "http://example.test/users/1/relationships?after-id=246138&detail=full&modified-since=2019-03-01T11:13:36.650&per-page=2")).to have_been_made.times(1)
+          expect(a_request(:get, "http://example.test/users/2/relationships?detail=full&per-page=2")).to have_been_made.times(1)
+          expect(a_request(:get, "http://example.test/users/3/relationships?detail=full&per-page=2")).to have_been_made.times(1)
+        end
       end
     end
   end

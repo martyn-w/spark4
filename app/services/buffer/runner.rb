@@ -16,6 +16,7 @@ module Buffer
       logger.info "Latest sync timestamp: #{latest_timestamp}"
 
       next_timestamp = DateTime.now
+      item_count = 0
 
       Settings.buffers.each do |buffer_setting|
         next if buffer_setting.enabled == false
@@ -35,29 +36,34 @@ module Buffer
         when 'buffer_related_items'
           reader.read do |items|
             items.each do |object_item|
-              buffer_setting.related_item.tap do |related_settings|
-                object_last_affected = DateTime.parse(object_item.get_attribute('last-modified-when')) rescue nil
-                related_data_filename = object_item.xpath(related_settings.filename.xsl)
+              begin
+                buffer_setting.related_item.tap do |related_settings|
+                  object_last_affected = DateTime.parse(object_item.get_attribute('last-modified-when')) rescue nil
+                  related_data_filename = object_item.xpath(related_settings.filename.xsl)
 
-                # only fetch the related data if it is newer than latest_timestamp or doesn't already exist
-                if latest_timestamp.nil? || object_last_affected.nil? || !output_file_exists?(related_data_filename) || latest_timestamp < object_last_affected
+                  # only fetch the related data if it is newer than latest_timestamp or doesn't already exist
+                  if latest_timestamp.nil? || object_last_affected.nil? || !output_file_exists?(related_data_filename) || latest_timestamp < object_last_affected
 
-                  data = Nokogiri::XML::Document.new
-                  data.add_child(object_item)
+                    item_count += 1
+                    data = Nokogiri::XML::Document.new
+                    data.add_child(object_item)
 
-                  related_item_url = data.root.at_xpath(related_settings.api.endpoint.xsl).value
+                    related_item_url = data.root.at_xpath(related_settings.api.endpoint.xsl).value
 
-                  item_reader = Reader.new(related_settings, logger)
-                  item_for = data.root.at_xpath(related_settings.data_for)
+                    item_reader = Reader.new(related_settings, logger)
+                    item_for = data.root.at_xpath(related_settings.data_for)
 
-                  item_reader.read(related_item_url) do |related_items|
-                    item_for << related_items
+                    item_reader.read(related_item_url) do |related_items|
+                      item_for << related_items
+                    end
+
+                    write_items(data, related_data_filename, "(last modified #{object_last_affected})")
+                  else
+                    logger.info "Skipping #{related_data_filename} (last modified #{object_last_affected})"
                   end
-
-                  write_items(data, related_data_filename)
-                else
-                  logger.info "Skipping #{related_data_filename} (last modified #{object_last_affected})"
                 end
+              rescue => ex
+                logger.error("Failed to buffer related items for #{object_item.to_xml}: #{ex.inspect}")
               end
             end
           end
@@ -65,6 +71,8 @@ module Buffer
       end
 
       write_sync_timestamp(next_timestamp)
+
+      logger.info "All done (#{item_count} items fetched)"
     end
 
 
@@ -77,11 +85,16 @@ module Buffer
       File.open(sync_filename, 'w') { |file| file.write({timestamp: timestamp.iso8601}.to_yaml) }
     end
 
-    def write_items(items, filename)
+    def write_items(items, filename, log_details = nil)
       output_file = File.join(Settings.output, filename)
       output_dir = File.dirname(output_file)
       FileUtils.mkpath(output_dir)
-      logger.debug("writing #{output_file}")
+      if log_details.present?
+        logger.info("Writing #{output_file} #{log_details}")
+      else
+        logger.info("Writing #{output_file}")
+      end
+
       File.write(output_file, items.to_xml)
     end
 

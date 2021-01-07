@@ -32,6 +32,7 @@ module Buffer
 
       # subsequent pages (if any)
       while has_next_page?
+        sleep(rand(0.25))
         fetch_page(next_page_url)
         yield current_items if block_given?
       end
