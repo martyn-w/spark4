@@ -1,16 +1,32 @@
-FROM ruby:2.7
-#RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
-WORKDIR /spark
-COPY Gemfile /spark/Gemfile
-COPY Gemfile.lock /spark/Gemfile.lock
-RUN bundle install
-COPY . /spark
+FROM ruby:2.7.2-alpine
+MAINTAINER Martyn Whitwell <martyn.whitwell@gmail.com>
 
-# Add a script to be executed every time the container starts.
-COPY entrypoint.sh /usr/bin/
-RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
-EXPOSE 3000
+ARG RAILS_ENV=production
+ENV RAILS_ENV="$RAILS_ENV"
 
-# Start the main process.
-CMD ["rails", "server", "-b", "0.0.0.0"]
+RUN apk --update add --virtual build-dependencies build-base ruby-dev libressl-dev libxml2-dev libxslt-dev \
+    libc-dev linux-headers tzdata git file \
+    && gem install bundler
+
+# Set local timezone
+RUN cp /usr/share/zoneinfo/Europe/London /etc/localtime && \
+    echo "Europe/London" > /etc/timezone
+
+COPY Gemfile Gemfile.lock /spark/
+
+RUN cd /spark && \
+    gem install bundler && \
+    bundle config build.nokogiri --use-system-libraries \
+    && if [ "$RAILS_ENV" = "production" ]; then \
+            bundle config set without 'development test'; \
+            bundle install; \
+        else \
+            bundle config set without 'production'; \
+            bundle install; \
+        fi
+
+COPY . /spark/
+
+WORKDIR "/spark"
+
+CMD ["bin/start-web.sh"]

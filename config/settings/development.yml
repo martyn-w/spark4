@@ -1,1 +1,38 @@
 output: data/
+
+log:
+  filename: "log/sync.log"
+  datetime_format: "%Y-%m-%d %H:%M:%S"
+  shift_age: 1         # only one old version of the logfile
+  shift_size: 104857600 # log file maximum size of 100mb
+
+buffers:
+  - name: person_index
+    enabled: true
+    mode: write_items
+    filename: "person/index.xml"
+    source:
+      api:
+        endpoint: users
+        params:
+          per-page: 25
+          detail: single-record
+      select: '/atom:feed/atom:entry/api:object'
+
+  - name: person
+    enabled: true
+    mode: buffer_related_items
+    source:
+      filename: 'person/index.xml'
+      select: '/data/api:object'
+    related_item:
+      data_for: 'api:relationships'
+      api:
+        endpoint:
+          xsl: 'api:relationships/@href'
+        params:
+          detail: full
+          per-page: 10
+      select: "/atom:feed/atom:entry/api:relationship[api:related/api:object/@category='publication']"
+      filename:
+        xsl: "concat('person/',@proprietary-id,'.xml')"

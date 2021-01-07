@@ -1,9 +1,23 @@
 version: "3.8"
 services:
   web:
-    build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
-    volumes:
-      - .:/myapp
+    build:
+      context: .
+      args:
+        - RAILS_ENV=production
+    image: spark4_app
+    environment:
+      - BUILD=unknown
+      - BUILD_DATE=unknown
+      - WORKER_MODE=false
+      - PIDFILE=/tmp/spark4.pid
+      - RUBYOPT=-W:no-deprecated -W:no-experimental
+      - RAILS_LOG_TO_STDOUT=yes_please
+      - RAILS_SERVE_STATIC_FILES=yes_please
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - ./log.docker:/log
+      - ./data.docker:/data
+      - ./settings.local.docker.yml:/spark/config/settings.local.yml
+    restart: on-failure

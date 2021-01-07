@@ -1,8 +1,13 @@
 data/
-tmp/
+data.docker/
+data.test/
 log/
+log.docker/
+tmp/
 .env
 .env.*
 *.icloud
 Dockerfile
 docker-compose.yml
+config/settings.local.yml
+settings.local.docker.yml
