@@ -63,7 +63,8 @@ module Buffer
                   end
                 end
               rescue => ex
-                logger.error("Failed to buffer related items for #{object_item.to_xml}: #{ex.inspect}")
+                logger.error("Failed to buffer related items: #{ex.inspect}")
+                logger.debug(object_item.get_attribute('href')) rescue nil
               end
             end
           end

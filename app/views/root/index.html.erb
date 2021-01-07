@@ -5,7 +5,7 @@
 </div>
 
 <div class="footer">
-  <p>data: <%=@data %></p>
   <p>last updated: <%=@last_updated %></p>
-  <p>version: <%=@version %></p>
+  <p>version: <%=ENV['VERSION'] %></p>
+  <p>build info: <%=ENV['BUILD']%> <%=ENV['BUILD_DATE'] %></p>
 </div>

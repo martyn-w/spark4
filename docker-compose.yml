@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  web:
+  spark_web:
     build:
       context: .
       args:
@@ -21,3 +21,21 @@ services:
       - ./data.docker:/data
       - ./settings.local.docker.yml:/spark/config/settings.local.yml
     restart: on-failure
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-exec.spark-sync.schedule: "@hourly"
+      ofelia.job-exec.spark-sync.no-overlap: "true"
+      ofelia.job-exec.spark-sync.command: "rake spark:sync"
+
+  ofelia:
+    image: mcuadros/ofelia:latest
+    depends_on:
+      - spark_web
+    command: daemon --docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+#    labels:
+#      ofelia.job-run.spark-sync.schedule: "@hourly"
+#      ofelia.job-run.spark-sync.image: "spark4_app"
+#      ofelia.job-run.spark-sync.command: "rake spark:sync"
+#      ofelia.job-run.spark-sync.no-overlap: "true"
