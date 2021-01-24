@@ -1,4 +1,4 @@
-class PersonController < ApplicationController
+class PeopleController < ApplicationController
 
   def index
     filename = File.join(Settings.output,'person', 'index.xml')

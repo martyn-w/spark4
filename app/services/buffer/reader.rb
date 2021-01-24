@@ -58,7 +58,7 @@ module Buffer
     def fetch_page(endpoint, params = nil)
       response = connection.get(endpoint, params, HEADERS)
 
-      raise "Error retrieving data from api #{endpoint}" unless response.success?
+      raise "Error retrieving data from api #{endpoint} (#{response.status}): #{response.body}" unless response.success?
 
       @current_page = Nokogiri::XML(response.body)
     end

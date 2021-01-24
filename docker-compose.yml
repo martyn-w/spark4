@@ -6,6 +6,8 @@ services:
       args:
         - RAILS_ENV=production
     image: spark4_app
+    env_file:
+      - .env
     environment:
       - BUILD=unknown
       - BUILD_DATE=unknown
@@ -15,12 +17,12 @@ services:
       - RAILS_LOG_TO_STDOUT=yes_please
       - RAILS_SERVE_STATIC_FILES=yes_please
     ports:
-      - "127.0.0.1:3000:3000"
+      - 81:3000
     volumes:
       - ./log.docker:/log
       - ./data.docker:/data
       - ./settings.local.docker.yml:/spark/config/settings.local.yml
-    restart: on-failure
+    restart: unless-stopped
     labels:
       ofelia.enabled: "true"
       ofelia.job-exec.spark-sync.schedule: "@hourly"
@@ -31,11 +33,7 @@ services:
     image: mcuadros/ofelia:latest
     depends_on:
       - spark_web
+    restart: unless-stopped
     command: daemon --docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-#    labels:
-#      ofelia.job-run.spark-sync.schedule: "@hourly"
-#      ofelia.job-run.spark-sync.image: "spark4_app"
-#      ofelia.job-run.spark-sync.command: "rake spark:sync"
-#      ofelia.job-run.spark-sync.no-overlap: "true"

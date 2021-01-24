@@ -16,7 +16,7 @@ buffers:
         endpoint: users
         params:
           per-page: 25
-          detail: single-record
+          detail: full
       select: '/atom:feed/atom:entry/api:object'
 
   - name: person
