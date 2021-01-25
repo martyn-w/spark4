@@ -3,16 +3,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
-gem 'config', '~> 2.2.1'
-gem 'faraday', '~> 1.0.1'
-gem 'nokogiri', '~> 1.10.10'
+gem 'config', '~> 2.2.3'
+gem 'faraday', '~> 1.3.0'
+gem 'nokogiri', '~>  1.11.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+gem 'rails', '~> 6.1.1'
 # Use Puma as the app server
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 5.1.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
+gem 'jbuilder', '~> 2.11.1'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
