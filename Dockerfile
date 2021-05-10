@@ -1,11 +1,11 @@
-FROM ruby:2.7.2-alpine
+FROM ruby:2.7.3-alpine
 MAINTAINER Martyn Whitwell <martyn.whitwell@gmail.com>
 
 ARG RAILS_ENV=production
 ENV RAILS_ENV="$RAILS_ENV"
 
 RUN apk --update add --virtual build-dependencies build-base ruby-dev libressl-dev libxml2-dev libxslt-dev \
-    libc-dev linux-headers tzdata git file \
+    libc-dev linux-headers tzdata git file shared-mime-info \
     && gem install bundler
 
 # Set local timezone

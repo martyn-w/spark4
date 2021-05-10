@@ -38,7 +38,7 @@ module Buffer
             items.each do |object_item|
               begin
                 buffer_setting.related_item.tap do |related_settings|
-                  object_last_affected = DateTime.parse(object_item.get_attribute('last-modified-when')) rescue nil
+                  object_last_affected = DateTime.parse(object_item.get_attribute('last-affected-when')) rescue nil
                   related_data_filename = object_item.xpath(related_settings.filename.xsl)
 
                   # only fetch the related data if it is newer than latest_timestamp or doesn't already exist
@@ -57,9 +57,9 @@ module Buffer
                       item_for << related_items
                     end
 
-                    write_items(data, related_data_filename, "(last modified #{object_last_affected})")
+                    write_items(data, related_data_filename, "(last affected #{object_last_affected})")
                   else
-                    logger.info "Skipping #{related_data_filename} (last modified #{object_last_affected})"
+                    logger.info "Skipping #{related_data_filename} (last affected #{object_last_affected})"
                   end
                 end
               rescue => ex
